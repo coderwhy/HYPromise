@@ -16,10 +16,10 @@ class HYPromise {
       // 只有在pending状态才能更改状态和值
       if (this.status === 'pending') {
         // 如果是一个promise或者是一个类promise就在其then方法中调用
-        if(value instanceof HYPromise || (value && typeof value.then === 'function')) {
-          value.then(resolve, reject);
-          return;
-        }
+        // if(value instanceof HYPromise || (value && typeof value.then === 'function')) {
+        //   value.then(resolve, reject);
+        //   return;
+        // }
         this.status = 'fulfilled';
         this.value = value;
         // 执行所有成功处理函数
